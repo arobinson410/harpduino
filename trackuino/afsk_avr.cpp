@@ -97,15 +97,15 @@ void afsk_timer_setup()
   //TCCR2A = (TCCR2A | _BV(WGM20)) & ~_BV(WGM21);
   //TCCR2B &= ~_BV(WGM22);
   
-#if AUDIO_PIN == 11
-  // Do non-inverting PWM on pin OC2A (arduino pin 11) (p.159)
+#if AUDIO_PIN == 10
+  // Do non-inverting PWM on pin OC2A (arduino pin 10) (p.159)
   // OC2B (arduino pin 3) stays in normal port operation:
   // COM2A1=1, COM2A0=0, COM2B1=0, COM2B0=0
   TCCR2A = (TCCR2A | _BV(COM2A1)) & ~(_BV(COM2A0) | _BV(COM2B1) | _BV(COM2B0));
 #endif  
 
-#if AUDIO_PIN == 3
-  // Do non-inverting PWM on pin OC2B (arduino pin 3) (p.159).
+#if AUDIO_PIN == 9
+  // Do non-inverting PWM on pin OC2B (arduino pin 9) (p.159).
   // OC2A (arduino pin 11) stays in normal port operation: 
   // COM2B1=1, COM2B0=0, COM2A1=0, COM2A0=0
   TCCR2A = (TCCR2A | _BV(COM2B1)) & ~(_BV(COM2B0) | _BV(COM2A1) | _BV(COM2A0));

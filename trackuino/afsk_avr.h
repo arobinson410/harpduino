@@ -36,7 +36,7 @@ extern const uint32_t PLAYBACK_RATE;
 extern const uint8_t afsk_sine_table[] PROGMEM;
 
 // Inline functions (this saves precious cycles in the ISR)
-#if AUDIO_PIN == 3
+#if AUDIO_PIN ==9
 #  define OCR2 OCR2B
 #endif
 #if AUDIO_PIN == 11

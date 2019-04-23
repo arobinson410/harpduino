@@ -89,7 +89,7 @@ long sensors_internal_temp()
 int sensors_lm60(int powerPin, int readPin)
 {
   pin_write(powerPin, HIGH);      // Turn the LM60 on
-  analogReference(INTERNAL);      // Ref=1.1V. Okay up to 108 degC (424 + 6.25*108 = 1100mV)
+  analogReference(INTERNAL1V1);      // Ref=1.1V. Okay up to 108 degC (424 + 6.25*108 = 1100mV)
   analogRead(readPin);            // Disregard the 1st conversion after changing ref (p.256)
   delay(10);                      // This is needed when switching references
   int adc = analogRead(readPin);  // Real read
